@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut similique quasi tempore aperiam, vitae numquam 
+            consequatur rerum laudantium obcaecati ipsa quis itaque quos, blanditiis dolorem, rem inventore illum cum 
+            optio. Fugiat, distinctio. Debitis enim asperiores libero quaerat saepe necessitatibus sapiente aut, fugiat 
+            dolore, voluptatibus alias!
+        </p>
+    </div>
+    
+    <script type="text/javascript">
+        
+        function chElement(element, color="blue", fSize="20px", backgroundC="gray"){
+            function SetAttributes(){
+                this.style.color=color;
+                this.style.fontSize=fSize;
+                this.style.backgroundColor=backgroundC;
+            }
+            SetAttributes.call(element);
+        }
+        el=document.getElementById("result");
+        chElement(el,"white","30px","black");
+
+    </script>
+</body>
+</html>
