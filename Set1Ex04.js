@@ -2,14 +2,14 @@
 //--------------------------------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------------------------------
 
-function copyProp(target,source,array=undefined){
-    if(array==undefined){
+function copyProp(target,source,specificProps=undefined){
+    if(specificProps==undefined){
         for(var prop in source){
             target[prop]=source[prop];
         }
     }
     else{
-        for(var prop of array){
+        for(var prop of specificProps){
             if (prop in source){
                 target[prop]=source[prop];
             }

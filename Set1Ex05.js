@@ -3,13 +3,9 @@
 //--------------------------------------------------------------------------------------------------------
 function count(input){
     if (typeof input == "string"){
-        vowels=/[aEeEiIoOuU]/;
+        const vowels=/[aeiou]/gi;
         var count=0;
-        for(let letter of input ){  
-            if (vowels.test(letter)){
-            count++;  
-            }    
-        }  
+        count = input.match(vowels).length;
       return count;  
     }
 
@@ -21,7 +17,7 @@ function count(input){
     }
 }
 
-console.log(count("Hello World"));
+console.log(count("aaHello World"));
 console.log(count(12345));
 console.log(count(1234));
 console.log(count(123));

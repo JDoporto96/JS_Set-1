@@ -2,10 +2,10 @@
 //--------------------------------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------------------------------
 
-function limitFunc(fn,times){
-    var count =0;
+function limitFunc(fn,num){
+    let count =0;
     return(()=>{
-        if (count<times){
+        if (count<num){
             fn()
             count++;
         }
@@ -13,11 +13,9 @@ function limitFunc(fn,times){
     })
 }
 
-var myfunc=()=>console.log("Hello World");
-var mylimitFn = limitFunc(myfunc,2);
+var fn=()=>console.log("Hello World");
+var limited = limitFunc(fn,2);
 
-mylimitFn();
-mylimitFn();
-mylimitFn();
-mylimitFn();
-mylimitFn();
+limited();
+limited();
+limited();
