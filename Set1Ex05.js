@@ -5,8 +5,12 @@ function count(input){
     if (typeof input == "string"){
         const vowels=/[aeiou]/gi;
         var count=0;
-        count = input.match(vowels).length;
-      return count;  
+        try{
+            count = input.match(vowels).length;
+            return count; }
+        catch{
+            return 0;
+        } 
     }
 
     else if(typeof input =="number"){
@@ -22,4 +26,5 @@ console.log(count(12345));
 console.log(count(1234));
 console.log(count(123));
 console.log(count(12));
+console.log(count("xyz"))
 

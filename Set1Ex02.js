@@ -2,20 +2,24 @@
 //--------------------------------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------------------------------
 
-function limitFunc(fn,num){
-    let count =0;
-    return(()=>{
-        if (count<num){
-            fn()
+function limitFunc(fn,times){
+    let count=0;
+    return (...args)=>{
+        if (count < times){
             count++;
+            return fn(...args);
         }
-        
-    })
+        else{
+            return("undefined. The limit has been reached");
+        }  
+    } 
 }
+function sum(a ,b){return a + b;}
 
-var fn=()=>console.log("Hello World");
-var limited = limitFunc(fn,2);
+const limSum = limitFunc(sum,2);
 
-limited();
-limited();
-limited();
+console.log(limSum(1,2));
+console.log(limSum(5,7));
+console.log(limSum(1,2));
+
+

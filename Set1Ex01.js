@@ -5,8 +5,15 @@
 function consonantCount(word){
     let count=0;
     consonants=/(?![aeiou])[a-z]/gi;
-    count=word.match(consonants).length;
-    return count;
+    if(typeof word == "string"){
+        try {
+            count=word.match(consonants).length;
+            return count;}
+        catch{
+            return 0;
+        }
+    }
+    
 }
 
 function mySort(array,ascending=true, order=undefined){
@@ -49,4 +56,6 @@ console.log(mySort(myArray,false,1));
 console.log(mySort(myArray,true,2));
 console.log(mySort(myArray,false,2));
 
+myArray=["fff","ee","dd","cc","b","a"];
+console.log(mySort(myArray,false,2));
 
