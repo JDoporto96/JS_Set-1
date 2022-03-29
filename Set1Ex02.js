@@ -10,7 +10,7 @@ function limitFunc(fn,times){
             return fn(...args);
         }
         else{
-            return("undefined. The limit has been reached");
+            throw new Error(`The limit has been reached`);
         }  
     } 
 }

@@ -4,15 +4,15 @@
 function count(input){
     if (typeof input == "string"){
         const vowels=/[aeiou]/gi;
-        var count=0;
-        try{
-            count = input.match(vowels).length;
-            return count; }
-        catch{
-            return 0;
-        } 
+        let count=0;
+        count=input.match(vowels);
+        if (count==null){
+            return 0;   
+        }
+        else{
+            return count.length;
+        }           
     }
-
     else if(typeof input =="number"){
         return Math.floor(Math.log10(input) +1);
     }

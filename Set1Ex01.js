@@ -6,14 +6,14 @@ function consonantCount(word){
     let count=0;
     consonants=/(?![aeiou])[a-z]/gi;
     if(typeof word == "string"){
-        try {
-            count=word.match(consonants).length;
-            return count;}
-        catch{
-            return 0;
+        count=word.match(consonants);
+        if (count==null){
+            return 0;   
         }
+        else{
+            return count.length;
+        }           
     }
-    
 }
 
 function mySort(array,ascending=true, order=undefined){
@@ -58,4 +58,3 @@ console.log(mySort(myArray,false,2));
 
 myArray=["fff","ee","dd","cc","b","a"];
 console.log(mySort(myArray,false,2));
-
